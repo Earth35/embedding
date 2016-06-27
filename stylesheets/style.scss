@@ -1,12 +1,45 @@
 /* variables */
 $btn-border-color: #d3d3d3;
 $btn-bg-color: #f8f8f8;
+$btn-bg-highlited-color: #f0f0f0;
 $btn-content-color: #333;
 $btn-signin-color: #167ac6;
+$btn-signin-active-color: #126db3;
 $btn-signin-content-color: #fff;
 $body-color: #f1f1f1;
 $user-color: #128ee9;
 $channel-color: #767676;
+
+/* mixins */
+@mixin top-icons {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 5px;
+}
+
+@mixin search-border {
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  &:hover {
+    border: 1px solid $btn-border-color;
+  }
+  &:active {
+    border: 1px solid $user-color;
+  }
+}
+
+@mixin top-btn {
+  display: inline-block;
+  height: 55%;
+  vertical-align: middle;
+  color: black;
+  font-family: arial;
+  font-size: 0.7em;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
 
 /* body */
 body {
@@ -22,28 +55,96 @@ header {
   height: 50px;
   width: 100%;
   padding: 0 25px;
-  background-color: red;
   box-sizing: border-box;
+  background-color: #fff;
+  border-bottom: 1px solid $btn-border-color;
   z-index: 2;
   .logo-container {
+    position: absolute;
     display: inline-block;
     width: 10%;
     height: 100%;
-    background-color: blue;
+    line-height: 50px;
+    #menu-icon {
+      @include top-icons;
+    }
+    #logo-icon {
+      @include top-icons;
+    }
+    .lang {
+      font-family: arial;
+      font-size: 0.75em;
+      color: $channel-color;
+      display: inline-block;
+      position: absolute;
+      top: -6px;
+      right: 13px;
+    }
   }
   .search-container {
+    position: absolute;
     display: inline-block;
     width: 50%;
     height: 100%;
+    left: 11.8%;
     padding: 0 10%;
-    background-color: yellow;
+    line-height: 50px;
+    .search-field {
+      vertical-align: middle;
+      width: 75%;
+      height: 45%;
+      @include search-border;
+    }
+    .tia {
+      position: absolute;
+      top: 21px;
+      left: 65.5%;
+      z-index: 3;
+    }
+    .search-btn {
+      position: relative;
+      left: -5px;
+      top: 2px;
+      width: 10%;
+      height: 54%;
+      box-sizing: border-box;
+      background: $btn-bg-color;
+      @include search-border;
+      &:hover {
+      background: $btn-bg-highlited-color;
+      }
+      #mag-glass {
+        position: relative;
+        top: 2px;
+      }
+    }
   }
   .button-container {
+    position: absolute;
     display: inline-block;
     width: 15%;
     height: 100%;
-    float: right;
-    background-color: orange;
+    right: 25px;
+    line-height: 50px;
+    #upload {
+      @include top-btn;
+      margin-left: 30%;
+      background: $btn-bg-color;
+      border: 1px solid $btn-border-color;
+      &:hover {
+        background: $btn-bg-highlited-color;
+      }
+    }
+    #sign-in {
+      @include top-btn;
+      background: $btn-signin-color;
+      border: 1px solid $btn-signin-color;
+      color: $btn-signin-content-color;
+      &:hover {
+        background: $btn-signin-active-color;
+        border: 1px solid $btn-signin-active-color;
+      }
+    }
   }
 }
 
