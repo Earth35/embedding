@@ -1,9 +1,15 @@
 /* variables */
 /* mixins */
-/* body */
+/* general */
 body {
   background-color: #f1f1f1;
-  padding: 0 25px; }
+  padding: 0 25px;
+  line-height: 100%; }
+
+.divider {
+  width: 100%;
+  color: #d3d3d3;
+  margin: 0; }
 
 /* header */
 header {
@@ -124,30 +130,170 @@ header {
 
 /* content */
 section {
-  display: inline-block;
   position: relative;
-  top: 50px;
-  left: 0;
-  background-color: black;
-  height: 1500px;
-  /*temp*/
-  width: 65%; }
+  top: 60px;
+  display: inline-block;
+  width: 66%;
+  vertical-align: top; }
+  section .stats {
+    background: #fff;
+    margin-top: 10px;
+    padding: 20px 15px 5px 15px;
+    box-sizing: border-box;
+    border: 1px solid #d3d3d3;
+    width: 100%;
+    height: 250px;
+    /* temp */ }
+    section .stats span {
+      font-family: arial;
+      color: #000;
+      font-size: 1.4em; }
+    section .stats div {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      padding: 10px 0;
+      box-sizing: border-box; }
+      section .stats div img {
+        display: inline-block; }
+      section .stats div .uploader-info {
+        display: inline-block;
+        width: 200px;
+        height: 100%;
+        padding: 0;
+        top: -12px; }
+        section .stats div .uploader-info #uploader-name {
+          position: relative;
+          color: #000;
+          top: -5px;
+          font-family: arial;
+          font-size: 0.8em;
+          font-weight: bold;
+          width: 100%; }
+        section .stats div .uploader-info #subscribe {
+          position: relative;
+          display: inline-block;
+          height: 25px;
+          border-radius: 3px;
+          border: none;
+          background-color: #e62117;
+          color: #fff;
+          font-family: arial;
+          font-size: 0.7em;
+          line-height: 25px;
+          bottom: 3px;
+          vertical-align: middle; }
+          section .stats div .uploader-info #subscribe:hover {
+            background-color: #cc181e; }
+          section .stats div .uploader-info #subscribe .ar-bg {
+            display: inline-block;
+            background: #fff;
+            border-radius: 3px;
+            width: 20px;
+            height: 14px;
+            vertical-align: middle; }
+            section .stats div .uploader-info #subscribe .ar-bg #ar {
+              position: relative;
+              top: -6px;
+              width: 0;
+              height: 0;
+              margin: auto;
+              display: inline-block;
+              padding: 0;
+              border-left: 4px solid #e62117;
+              border-top: 4px solid transparent;
+              border-bottom: 4px solid transparent; }
+        section .stats div .uploader-info #sub-count {
+          position: relative;
+          display: inline-block;
+          height: 25px;
+          color: #767676;
+          font-family: arial;
+          font-size: 0.7em;
+          line-height: 25px;
+          box-sizing: border-box;
+          top: -2px;
+          left: -5px;
+          padding: 0 5px;
+          background-color: #fff;
+          border: 1px solid #d3d3d3; }
+      section .stats div #views {
+        position: relative;
+        right: 0;
+        bottom: -30px;
+        float: right;
+        color: #333;
+        font-size: 1.3em; }
 
 /* recommendations */
 aside {
   position: relative;
   display: inline-block;
-  top: 50px;
+  top: 60px;
+  padding-bottom: 15px;
   right: 0;
-  height: 1500px;
-  /*temp*/
-  width: 32.6%;
-  margin-left: 2%;
-  background-color: white; }
+  width: 32.5%;
+  margin-left: 1%;
+  background-color: white;
+  border: 1px solid #d3d3d3;
+  box-sizing: border-box; }
+  aside .rec {
+    position: relative;
+    width: 100%;
+    height: 105px;
+    padding: 0 10px;
+    box-sizing: border-box; }
+    aside .rec .thumbnail {
+      display: inline-block;
+      padding-top: 15px; }
+    aside .rec .duration {
+      position: absolute;
+      display: inline-block;
+      top: 90px;
+      left: 90px;
+      width: 40px;
+      height: 15px;
+      background: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      font-family: arial;
+      font-size: 0.75em;
+      font-weight: bold;
+      vertical-align: middle;
+      text-align: center;
+      z-index: 4; }
+    aside .rec .data {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      padding: 15px 10px 0 10px;
+      width: 62%;
+      height: 90%; }
+      aside .rec .data .vid-title {
+        position: absolute;
+        width: 95%;
+        height: 40%;
+        top: 20px;
+        font-family: arial;
+        font-weight: bold;
+        font-size: 0.8em;
+        color: #000; }
+      aside .rec .data .rec-meta {
+        position: relative;
+        top: 35%;
+        height: 40%; }
+        aside .rec .data .rec-meta .vid-desc {
+          position: relative;
+          top: 35%;
+          width: 100%;
+          font-family: arial;
+          font-size: 0.7em;
+          letter-spacing: 0.1px;
+          color: #767676; }
 
 /* footer */
 footer {
   position: relative;
+  top: 70px;
   bottom: 0;
   left: 0;
   width: 100%;
