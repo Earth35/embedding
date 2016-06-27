@@ -141,9 +141,7 @@ section {
     padding: 20px 15px 5px 15px;
     box-sizing: border-box;
     border: 1px solid #d3d3d3;
-    width: 100%;
-    height: 250px;
-    /* temp */ }
+    width: 100%; }
     section .stats span {
       font-family: arial;
       color: #000;
@@ -152,7 +150,7 @@ section {
       position: relative;
       display: inline-block;
       width: 100%;
-      padding: 10px 0;
+      padding: 10px 0 0 0;
       box-sizing: border-box; }
       section .stats div img {
         display: inline-block; }
@@ -224,6 +222,59 @@ section {
         float: right;
         color: #333;
         font-size: 1.3em; }
+      section .stats div .opt-wrapper {
+        display: inline-block;
+        width: 50%; }
+        section .stats div .opt-wrapper span {
+          height: 100%; }
+          section .stats div .opt-wrapper span .opt-icon {
+            position: relative;
+            width: 25px;
+            height: 25px;
+            top: -1px;
+            background-color: #767676;
+            color: #fff;
+            font-size: 0.8em;
+            line-height: 25px;
+            text-align: center;
+            padding: 0; }
+            section .stats div .opt-wrapper span .opt-icon:hover {
+              background-color: #333; }
+          section .stats div .opt-wrapper span .opt-btn {
+            position: relative;
+            height: 25px;
+            top: -3px;
+            border: none;
+            background-color: transparent;
+            color: #767676; }
+            section .stats div .opt-wrapper span .opt-btn:hover {
+              color: #333; }
+      section .stats div .votes-wrapper {
+        display: inline-block;
+        float: right;
+        height: 47px;
+        width: 50%;
+        position: relative;
+        top: -1px;
+        text-align: right; }
+        section .stats div .votes-wrapper span {
+          width: 50%;
+          height: 100%; }
+          section .stats div .votes-wrapper span .vote-type {
+            display: inline-block;
+            width: auto;
+            padding: 0 5px;
+            height: 100%;
+            color: #767676; }
+          section .stats div .votes-wrapper span .vote {
+            position: relative;
+            height: 25px;
+            top: -3px;
+            border: none;
+            background-color: transparent;
+            color: #767676; }
+            section .stats div .votes-wrapper span .vote:hover {
+              color: #333; }
 
 /* recommendations */
 aside {
