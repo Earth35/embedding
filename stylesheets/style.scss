@@ -41,6 +41,25 @@ $channel-color: #767676;
   box-sizing: border-box;
 }
 
+@mixin votebar-common {
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+@mixin layout-inner {
+  background: #fff;
+  margin-top: 10px;
+  padding: 20px 15px 5px 15px;
+  box-sizing: border-box;
+  border: 1px solid $btn-border-color;
+  width: 100%;
+}
+
 /* general */
 body {
   background-color: $body-color;
@@ -163,12 +182,7 @@ section {
   width: 66%;
   vertical-align: top;
   .stats {
-    background: #fff;
-    margin-top: 10px;
-    padding: 20px 15px 5px 15px;
-    box-sizing: border-box;
-    border: 1px solid $btn-border-color;
-    width: 100%;
+    @include layout-inner;
     span {
       font-family: arial;
       color: #000;
@@ -325,6 +339,66 @@ section {
       }
     }
   }
+  .description {
+    @include layout-inner;
+    .published {
+      font-family: arial;
+      font-size: 0.8em;
+      font-weight: bold;
+      color: #000;
+      padding-bottom: 5px;
+    }
+    p {
+      font-family: arial;
+      font-size: 0.8em;
+      color: #000;
+      padding-bottom: 15px;
+      a {
+        color: $user-color;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .desc-meta {
+      display: block;
+      font-family: arial;
+      font-size: 0.7em;
+      font-weight: bold;
+      color: #000;
+      width: 35%;
+      p {
+        display: inline-block;
+        position: absolute;
+        left: 15%;
+        text-align: left;
+        padding: 0;
+        font-weight: normal;
+        font-size: 0.9em;
+      }
+    }
+    .more-less {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+      padding-bottom: 5px;
+      p {
+        margin: auto;
+        width: 100px;
+        font-family: arial;
+        font-size: 0.7em;
+        font-weight: bold;
+        text-align: center;
+        color: $channel-color;
+        padding: 0;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
 }
 
 /* recommendations */
@@ -409,4 +483,28 @@ footer {
   width: 100%;
   height: 125px;
   background-color: cyan;
+}
+
+/* details */
+#votebar {
+  position: absolute;
+  width: 200px;
+  height: 2px;
+  top: -3px;
+  right: -2px;
+  box-sizing: border-box;
+  padding: 0;
+  display: inline-block;
+  #vote-plus {
+    left: 0;
+    background-color: $user-color;
+    width: 97%;
+    @include votebar-common;
+  }
+  #vote-minus {
+    right: 0;
+    background-color: $channel-color;
+    width: 3%;
+    @include votebar-common;
+  }
 }
