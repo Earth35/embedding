@@ -399,6 +399,17 @@ section {
       }
     }
   }
+  .comments {
+    @include layout-inner;
+    .disabled {
+      font-family: arial;
+      font-size: 1em;
+      color: $channel-color;
+      padding-top: 15px;
+      padding-bottom: 25px;
+      text-align: center;
+    }
+  }
 }
 
 /* recommendations */
